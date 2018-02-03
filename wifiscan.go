@@ -1,5 +1,8 @@
 package main
-
+/*
+	UTIL to get the name and some more detail of the wifi this server is connected .
+	
+ */
 import (
 	"io/ioutil"
 	"os/exec"
