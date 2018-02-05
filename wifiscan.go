@@ -1,7 +1,7 @@
 package main
 /*
 	UTIL to get the name and some more detail of the wifi this server is connected .
-	
+
  */
 import (
 	"io/ioutil"
@@ -22,6 +22,8 @@ func WifiName() string {
 	if platform == "darwin" {
 		return forOSX()
 	}
+
+	return ""
 }
 
 func forLinux() string {
