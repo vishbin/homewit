@@ -20,13 +20,17 @@ const linuxArgs = "--raw"
 func WifiName() string {
 	platform := runtime.GOOS
 	if platform == "darwin" {
-		return forOSX()
+		return scanOSX()
+	}else{
+		return scanLinux()
+
 	}
+
 
 	return ""
 }
 
-func forLinux() string {
+func scanLinux() string {
 	cmd := exec.Command(linuxCmd, linuxArgs)
 	stdout, err := cmd.StdoutPipe()
 	panicIf(err)
@@ -46,7 +50,7 @@ func forLinux() string {
 	return name
 }
 
-func forOSX() string {
+func scanOSX() string {
 
 	cmd := exec.Command(osxCmd, osxArgs)
 
